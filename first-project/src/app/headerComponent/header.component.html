@@ -1,0 +1,36 @@
+<div class="header">
+    <div class="logo">
+        <h1>{{nomeMarca}} &#x2661; </h1>
+    </div>
+<!-- 
+    <div class="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div> -->
+
+</div>
+<div class="container">
+
+    <div class="offer">
+        <div class="name-product">
+            <h3>{{productName}}</h3>
+        </div>
+        <h4>Flavours:</h4>
+        <ul id="muffinsFlavours">
+            <li *ngFor='let flavours of flavours'>{{flavours}}</li>
+        </ul>
+        <h4>Available Quantity: {{muffins}} </h4>
+        <p [ngSwitch]="muffins">
+        <span *ngSwitchCase = "3"   class="alert">Almost Running Out</span>
+        <span *ngSwitchCase = "2"   class="alert">Almost Running Out</span>
+        <span *ngSwitchCase = "1"    class="alert">Almost Running Out</span>
+        <span *ngSwitchCase = "0"    class="alert">Sold Out</span>
+        </p>
+        <button class="btn" (click)="pedirMuffin()">Order Now!</button>
+    </div>
+    
+</div>
